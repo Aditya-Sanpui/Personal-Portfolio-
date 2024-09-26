@@ -1,0 +1,716 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+
+}
+
+:root {
+    --bg-color: #081b29;
+    --2nd-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+
+html {
+    /* font-size: 62.5%; */
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    height: 2.4rem;
+    right: 0%;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    background: var(--2nd-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header .sticky {
+    border: 2px solid var(--2nd-bg-color);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: 1s;
+
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    text-shadow: #262b40;
+}
+
+#menu-icon {
+    font-size: 3.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* background: url(https://wallpaperaccess.com/full/4525229.jpg) no-repeat; */
+     
+     background: var(--bg-color);
+    background-size: cover;
+    height: 100vh;
+    /* Ensure it has a height */
+}
+/* 
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Black overlay with 50% opacity */
+    z-index: 2;
+    /* Ensure overlay is above the background image */
+}
+
+.home>* {
+    position: relative;
+    z-index: 2;
+    /* Ensure content is above the overlay */
+} */
+
+
+.home-content {
+    max-width: 60rem;
+}
+
+.home-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.home-content h3 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    /* color: ; */
+    /* -webkit-text-stroke:.7px var(--main-color); */
+}
+
+#element {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--main-color);
+}
+
+.btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 15rem;
+    height: 1rem;
+
+}
+
+.btn-box .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 6rem;
+    height: 2rem;
+    margin-top: 9%;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+
+}
+
+.btn-box .btn:hover {
+    color: var(--main-color);
+
+}
+
+.btn-box .btn:nth-child(2) {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover {
+    background: var(--bg-color);
+}
+
+.btn-box .btn:nth-child(2)::before {
+    background: var(--2nd-bg-color);
+}
+
+.btn-box .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+}
+
+.btn-box .btn:hover:before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 4rem;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 7px;
+    background: transparent;
+    border: .02rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.home-sci a:nth-child(1) {
+    margin-left: 2px;
+}
+
+.home-sci a:hover {
+    color: purple;
+    background: var(--2nd-bg-color);
+    cursor: pointer;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+/* About Section  */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: var(--bg-color);
+}
+
+.heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
+
+.heading #me {
+    color: var(--main-color);
+}
+
+.about-img {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 70%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+
+}
+
+.circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--2nd-bg-color);
+    border-bottom: .2rem solid var(--2nd-bg-color);
+    border-left: .2rem solid var(--main-color);
+    border-right: .2rem solid var(--main-color);
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.btn-box .btns {
+    display: inline-block;
+    width: 15rem;
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover {
+    color: purple;
+    background: var(--2nd-bg-color);
+    cursor: pointer;
+}
+
+.btn2 {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 7rem;
+    height: 2rem;
+    margin-top: -8%;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--text-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    cursor: pointer;
+}
+
+/* Education Section  */
+
+.education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height:fit-content;
+    padding-bottom: 5rem;
+
+}
+
+.education .education-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    flex-direction: row;
+}
+
+.education-row .education-collum {
+    flex: 1 1 40rem;
+}
+
+.education-collum .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
+
+.education-collum .education-box {
+    border-left: .2rem solid var(--main-color);
+
+
+}
+
+.education-box .education-content {
+    position: relative;
+    padding-left: 2rem;
+
+}
+
+.education-box .education-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.0rem;
+    width: 30px;
+    height: 23px;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.education-content .content {
+    position: relative;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: .2rem solid var(--main-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.education-content .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--2nd-bg-color);
+    z-index: -1;
+    transition: .5s;
+
+}
+
+.education-content .content:hover:before {
+    width: 100%;
+}
+
+.education-content .content .year {
+    font-size: 1.3rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.education-content .content .year i {
+    padding-right: .5rem;
+}
+
+.education-content .content h3 {
+    font-size: 2rem;
+}
+
+.education-content .content p {
+    font-size: 1.3rem;
+    padding-top: .5rem;
+
+}
+
+.t2 {
+    color: var(--main-color);
+}
+
+/* skill section  */
+.skill {
+    min-height: fit-content;
+    padding-bottom: 7rem;
+    background: var(--bg-color);
+
+}
+
+.skill .skill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.skill .skill-row .skill-collum {
+    flex: 1 1 30rem;
+}
+
+.skill-collum .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+
+}
+
+.skills-box .skills-content {
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+
+}
+
+.skills-box .skills-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--2nd-bg-color);
+    z-index: -1;
+    transition: .2s;
+}
+
+.skills-box .skills-content:hover:before {
+    width: 100%;
+}
+
+.skills-content .progress {
+    padding: 1rem 0;
+
+}
+
+.skills-content .progress h3 {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-content .progress h3:hover {
+    font-size: 1.32rem;
+    cursor: pointer;
+}
+
+.skills-content .progress .bar {
+    height: 1rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .2rem;
+    margin: .9rem 0;
+
+}
+
+.skills-content .progress .bar span {
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: purple;
+    /* color: var(--main-color); */
+
+}
+
+/* progress Bar span Width  */
+#HTML {
+    width: 90%;
+}
+
+#CSS {
+    width: 80%;
+}
+
+#JavaScript {
+    width: 65%;
+}
+
+#Python {
+    width: 55%;
+}
+
+#Java {
+    width: 30%;
+    ;
+}
+
+#Web-Design {
+    width: 90%;
+}
+
+#Web-Development {
+    width: 67%;
+}
+
+#Video-Editing {
+    width: 75%;
+}
+
+#Blogging {
+    width: 60%;
+}
+
+#Digital-Marketing {
+    width: 50%;
+}
+
+/* contact Section  */
+
+.contact {
+    min-height: fit-content;
+    padding-bottom: 7rem;
+
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.contact form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box .input-field {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+
+.contact form .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: red;
+    z-index: -1;
+    transition: .5s;
+}
+
+.contact form input:focus~.focus,
+.contact form input:user-valid~.focus {
+    width: 100;
+}
+
+.contact form .textarea-field {
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contact form .textarea-field textarea {
+    resize: none;
+}
+
+/* footer section  */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 5%;
+    background: var(--bg-color);
+    border: .2rem solid var(--2nd-bg-color);
+
+}
+
+.footer-text{
+    font-size: 1.2rem;
+}
+.footer-iconTop a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: .5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+.footer-iconTop a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+}
+.footer-iconTop a:hover:before{
+    width: 100%;
+}
+.footer-iconTop a i{
+    font-size: 1rem;
+    color: var(--main-color);
+}
